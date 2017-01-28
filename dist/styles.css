@@ -1,0 +1,28 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto|Patua+One';
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5em;
+  margin: 20px;
+  min-width: 300px;
+  max-width: 750px;
+}
+
+h1 {
+  font-family: 'Patua One', cursive;
+}
+
+.todo-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+/*  margin: 22px 0;*/
+}
+
+.top-buffer {
+  margin-top: 17.5px;
+}
+
+.half-buffer {
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
+}
