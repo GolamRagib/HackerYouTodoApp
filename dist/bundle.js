@@ -21537,6 +21537,7 @@
 	    return {
 	      todos: [{ text: "Mow the lawn", completed: false }, { text: "Do the dishes", completed: true }, { text: "Do more dishes", completed: false }],
 	      selector: 0,
+	      itemCounts: [0, 0, 0],
 	      columns: "\"col-xs-12\""
 	    };
 	  },
@@ -21647,32 +21648,19 @@
 	  },
 
 	  headerMessages: function headerMessages() {
-	    var todoItems = this.props.todos;
-	    var todoCount = todoItems.length;
-	    var todoComplete = 0;
-	    var todoIncomplete = 0;
-	    var message;
-	    var i;
-	    for (i = 0; i < todoItems.length; i++) {
-	      if (this.props.todos[i].completed) todoComplete++;else todoIncomplete++;
+	    var k = this.props.selector;
+	    var itemCounts = [0, 0, 0];
+	    var headerMessage = ["in the list", "completed", "incomplete"];
+
+	    itemCounts[0] = this.props.todos.length;
+	    for (var j = 0; j < itemCounts[0]; j++) {
+	      if (this.props.todos[j].completed) itemCounts[1]++;else itemCounts[2]++;
 	    }
-	    switch (this.props.selector) {
-	      case 0:
-	        message = todoCount ? todoCount + " " : "No ";
-	        message += [0, 1].includes(todoCount) ? "task " : "tasks ";
-	        message += "in the list";
-	        break;
-	      case 1:
-	        message = todoComplete ? todoComplete + " " : "No ";
-	        message += [0, 1].includes(todoComplete) ? "task " : "tasks ";
-	        message += "completed";
-	        break;
-	      case 2:
-	        message = todoIncomplete ? todoIncomplete + " " : "No ";
-	        message += [0, 1].includes(todoIncomplete) ? "task " : "tasks ";
-	        message += "incomplete";
-	        break;
-	    }
+
+	    var message = itemCounts[k] ? itemCounts[k] + " " : "No ";
+	    message += [0, 1].includes(itemCounts[k]) ? "task " : "tasks ";
+	    message += headerMessage[k];
+
 	    return message;
 	  }
 
@@ -21909,26 +21897,14 @@
 	  },
 
 	  countItems: function countItems(todoItems, i) {
-	    var todoCount = todoItems.length;
-	    var todoComplete = 0;
-	    var todoIncomplete = 0;
-	    var message;
-	    var j;
-	    for (j = 0; j < todoItems.length; j++) {
-	      if (this.props.todos[j].completed) todoComplete++;else todoIncomplete++;
+	    var itemCounts = [0, 0, 0];
+
+	    itemCounts[0] = todoItems.length;
+	    for (var j = 0; j < itemCounts[0]; j++) {
+	      if (this.props.todos[j].completed) itemCounts[1]++;else itemCounts[2]++;
 	    }
-	    switch (i) {
-	      case 0:
-	        message = todoCount;
-	        break;
-	      case 1:
-	        message = todoComplete;
-	        break;
-	      case 2:
-	        message = todoIncomplete;
-	        break;
-	    }
-	    return message;
+
+	    return itemCounts[i];
 	  }
 
 	});

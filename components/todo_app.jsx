@@ -13,13 +13,13 @@ var TodoApp = React.createClass({
         { text: "Do more dishes", completed: false }
       ],
       selector: 0,
+      itemCounts: [0, 0, 0],
       columns: "\"col-xs-12\"",
     }
   },
 
   render: function() {
     return <div className="todo-list">
-      
       <TodoHeader todos={ this.state.todos }
                selector={ this.state.selector }
                 columns={ this.state.columns }/>

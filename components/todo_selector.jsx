@@ -33,28 +33,17 @@ var TodoSelector = React.createClass({
   },
   
   countItems: function(todoItems, i) {
-    var todoCount = todoItems.length;
-    var todoComplete = 0;
-    var todoIncomplete = 0;
-    var message;
-    var j;
-    for(j = 0; j < todoItems.length; j++){
+    var itemCounts = [ 0, 0, 0 ];
+    
+    itemCounts[0] = todoItems.length;
+    for(var j = 0; j < itemCounts[0]; j++){
       if(this.props.todos[j].completed)
-      todoComplete++;
-      else todoIncomplete++;
+        itemCounts[1]++;
+      else
+        itemCounts[2]++;
     }
-    switch(i) {
-      case 0:
-        message = todoCount;
-        break;
-      case 1:
-        message = todoComplete;
-        break;
-      case 2:
-        message = todoIncomplete;
-        break;
-    }
-    return message;
+    
+    return itemCounts[i];
   }
 
 });
