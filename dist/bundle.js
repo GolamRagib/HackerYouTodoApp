@@ -21536,9 +21536,7 @@
 	  getInitialState: function getInitialState() {
 	    return {
 	      todos: [{ text: "Mow the lawn", completed: false }, { text: "Do the dishes", completed: true }, { text: "Do more dishes", completed: false }],
-	      selector: 0,
-	      itemCounts: [0, 0, 0],
-	      columns: "\"col-xs-12\""
+	      selector: 0
 	    };
 	  },
 
@@ -21713,12 +21711,16 @@
 	          { className: "input-group" },
 	          _react2.default.createElement(
 	            "span",
-	            { className: "input-group-addon" },
-	            _react2.default.createElement("input", { type: "checkbox",
-	              checked: todo.completed,
-	              onChange: function onChange() {
-	                return _this2.props.onComplete(i);
-	              } })
+	            { className: "input-group-btn" },
+	            _react2.default.createElement(
+	              "button",
+	              { type: "button",
+	                className: "btn btn-primary",
+	                onClick: function onClick() {
+	                  return _this2.props.onComplete(i);
+	                } },
+	              _react2.default.createElement("span", { className: todo.completed ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-none" })
+	            )
 	          ),
 	          _react2.default.createElement("input", { type: "text",
 	            className: "form-control",
@@ -21732,11 +21734,11 @@
 	            _react2.default.createElement(
 	              "button",
 	              { type: "button",
-	                className: "btn btn-primary",
+	                className: "btn btn-danger",
 	                onClick: function onClick() {
 	                  return _this2.props.onDelete(i);
 	                } },
-	              _react2.default.createElement("span", { className: "glyphicon glyphicon-remove" })
+	              _react2.default.createElement("span", { className: "glyphicon glyphicon-trash" })
 	            )
 	          )
 	        )

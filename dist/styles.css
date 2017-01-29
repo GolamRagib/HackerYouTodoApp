@@ -1,7 +1,6 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto|Patua+One';
 body {
   font-family: 'Roboto', sans-serif;
-  line-height: 1.5em;
   min-width: 300px;
   max-width: 750px;
 }
@@ -36,4 +35,10 @@ hr {
 .navbar-fixed-bottom {
   min-width: 300px;
   max-width: 750px;
+}
+
+
+.glyphicon-none:before {
+    content: "\e013";
+    color: transparent !important;
 }

@@ -13,8 +13,6 @@ var TodoApp = React.createClass({
         { text: "Do more dishes", completed: false }
       ],
       selector: 0,
-      itemCounts: [0, 0, 0],
-      columns: "\"col-xs-12\"",
     }
   },
 

@@ -16,20 +16,23 @@ var TodoList = React.createClass({
     return <div className="col-xs-12 half-buffer" key={i}>
       <div className="">
         <div className="input-group">
-          <span className="input-group-addon">
-            <input type="checkbox"
-                   checked={todo.completed}
-                   onChange={() => this.props.onComplete(i)} />
-          </span>
-          <input type="text"
-                 className="form-control"
-                 onChange={(evt) => this.props.onUpdateText(i, evt.target.value)}
-                 value={todo.text}/>
           <span className="input-group-btn">
             <button type="button"
                     className="btn btn-primary"
-                    onClick={() => this.props.onDelete(i)}>
-              <span className="glyphicon glyphicon-remove"></span>
+                    onClick={ () => this.props.onComplete(i) } >
+              <span className={ todo.completed ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-none" } >
+              </span>
+            </button>
+          </span>
+          <input type="text"
+                 className="form-control"
+                 onChange={ (evt) => this.props.onUpdateText(i, evt.target.value) }
+                 value={ todo.text }/>
+          <span className="input-group-btn">
+            <button type="button"
+                    className="btn btn-danger"
+                    onClick={ () => this.props.onDelete(i) }>
+              <span className="glyphicon glyphicon-trash"></span>
             </button>
           </span>
         </div>
