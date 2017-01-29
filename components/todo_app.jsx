@@ -24,9 +24,10 @@ var TodoApp = React.createClass({
                selector={ this.state.selector }
                 columns={ this.state.columns }/>
       
-      <TodoSelector selector={ this.state.selector }
-            onUpdateSelector={ (i) => this.setState({ selector: i }) }
-                     columns={ this.state.columns }/>
+      <TodoSelector todos={ this.state.todos }
+                 selector={ this.state.selector }
+         onUpdateSelector={ (i) => this.setState({ selector: i }) }
+                  columns={ this.state.columns }/>
       
       <TodoList todos={ this.state.todos }
              selector={ this.state.selector }

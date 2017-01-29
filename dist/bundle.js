@@ -21550,7 +21550,8 @@
 	      _react2.default.createElement(_todo_header2.default, { todos: this.state.todos,
 	        selector: this.state.selector,
 	        columns: this.state.columns }),
-	      _react2.default.createElement(_todo_selector2.default, { selector: this.state.selector,
+	      _react2.default.createElement(_todo_selector2.default, { todos: this.state.todos,
+	        selector: this.state.selector,
 	        onUpdateSelector: function onUpdateSelector(i) {
 	          return _this.setState({ selector: i });
 	        },
@@ -21876,7 +21877,13 @@
 	                { onClick: function onClick(evt) {
 	                    return _this.props.onUpdateSelector(i);
 	                  } },
-	                selectors
+	                selectors,
+	                "\xA0",
+	                _react2.default.createElement(
+	                  "span",
+	                  { className: "badge" },
+	                  _this.countItems(_this.props.todos, i)
+	                )
 	              )
 	            );else return _react2.default.createElement(
 	              "li",
@@ -21886,13 +21893,42 @@
 	                { onClick: function onClick(evt) {
 	                    return _this.props.onUpdateSelector(i);
 	                  } },
-	                selectors
+	                selectors,
+	                "\xA0",
+	                _react2.default.createElement(
+	                  "span",
+	                  { className: "badge" },
+	                  _this.countItems(_this.props.todos, i)
+	                )
 	              )
 	            );
 	          })
 	        )
 	      )
 	    );
+	  },
+
+	  countItems: function countItems(todoItems, i) {
+	    var todoCount = todoItems.length;
+	    var todoComplete = 0;
+	    var todoIncomplete = 0;
+	    var message;
+	    var j;
+	    for (j = 0; j < todoItems.length; j++) {
+	      if (this.props.todos[j].completed) todoComplete++;else todoIncomplete++;
+	    }
+	    switch (i) {
+	      case 0:
+	        message = todoCount;
+	        break;
+	      case 1:
+	        message = todoComplete;
+	        break;
+	      case 2:
+	        message = todoIncomplete;
+	        break;
+	    }
+	    return message;
 	  }
 
 	});
