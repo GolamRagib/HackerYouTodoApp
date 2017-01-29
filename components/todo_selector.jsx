@@ -8,7 +8,7 @@ var TodoSelector = React.createClass({
   },
 
   render: function() {
-    return <div className="row mytag">
+    return <div className="row bottom-buffer">
         <div className="col-xs-12">
           <ul className="nav nav-tabs">
             { this.state.selectors.map((selectors, i) => {

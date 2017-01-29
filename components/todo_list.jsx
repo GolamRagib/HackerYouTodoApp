@@ -2,7 +2,7 @@ import React from 'react';
 
 var TodoList = React.createClass({
   render: function() {
-    return <div className="row mytag top-buffer">
+    return <div className="row">
       { this.props.todos.map((todo, i) => {
         if((todo.completed) && [0,1].includes(this.props.selector))
         return this.createList(todo, i);

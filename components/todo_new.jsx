@@ -9,7 +9,7 @@ var TodoNew = React.createClass({
   
   render: function() {
     return <div className="row">
-      <div className="col-xs-12">
+      <div className="col-xs-12 navbar-fixed-bottom bottom-buffer">
         <hr />
         <div className="input-group">
           <input type="text"

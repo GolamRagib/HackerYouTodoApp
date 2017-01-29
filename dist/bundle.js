@@ -21628,7 +21628,7 @@
 	  render: function render() {
 	    return _react2.default.createElement(
 	      "div",
-	      { className: "row mytag" },
+	      { className: "row" },
 	      _react2.default.createElement(
 	        "div",
 	        { className: "col-xs-12" },
@@ -21703,7 +21703,7 @@
 
 	    return _react2.default.createElement(
 	      "div",
-	      { className: "row mytag top-buffer" },
+	      { className: "row" },
 	      this.props.todos.map(function (todo, i) {
 	        if (todo.completed && [0, 1].includes(_this.props.selector)) return _this.createList(todo, i);else if (!todo.completed && [0, 2].includes(_this.props.selector)) return _this.createList(todo, i);
 	      })
@@ -21790,7 +21790,7 @@
 	      { className: "row" },
 	      _react2.default.createElement(
 	        "div",
-	        { className: "col-xs-12" },
+	        { className: "col-xs-12 navbar-fixed-bottom bottom-buffer" },
 	        _react2.default.createElement("hr", null),
 	        _react2.default.createElement(
 	          "div",
@@ -21860,7 +21860,7 @@
 
 	    return _react2.default.createElement(
 	      "div",
-	      { className: "row mytag" },
+	      { className: "row bottom-buffer" },
 	      _react2.default.createElement(
 	        "div",
 	        { className: "col-xs-12" },

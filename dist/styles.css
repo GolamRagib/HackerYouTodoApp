@@ -2,13 +2,13 @@
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.5em;
-  margin: 20px;
   min-width: 300px;
   max-width: 750px;
 }
 
 h1 {
   font-family: 'Patua One', cursive;
+  margin-top: 10px;
 }
 
 .todo-header {
@@ -19,10 +19,21 @@ h1 {
 }
 
 .top-buffer {
-  margin-top: 17.5px;
+  margin-top: 5px;
+}
+.bottom-buffer {
+  margin-bottom: 20px;
 }
 
 .half-buffer {
-  margin-top: 2.5px;
-  margin-bottom: 2.5px;
+  margin-bottom: 10px;
+}
+
+hr {
+  border-top: 1px solid #dddddd;
+}
+
+.navbar-fixed-bottom {
+  min-width: 300px;
+  max-width: 750px;
 }
