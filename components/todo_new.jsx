@@ -41,9 +41,8 @@ var TodoNew = React.createClass({
   },
   
   onPressEnterKey: function( evt ) {
-    if ( evt.key === "Enter" ) {
+    if ( evt.key === "Enter" )
       this.onAddNewButtonClick();
-    }
   },
 
 });
