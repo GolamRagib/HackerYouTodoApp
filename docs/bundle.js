@@ -21819,9 +21819,7 @@
 	  },
 
 	  onPressEnterKey: function onPressEnterKey(evt) {
-	    if (evt.key === "Enter") {
-	      this.onAddNewButtonClick();
-	    }
+	    if (evt.key === "Enter") this.onAddNewButtonClick();
 	  }
 
 	});
