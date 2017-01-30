@@ -4,6 +4,7 @@ body {
   min-width: 300px;
   max-width: 750px;
   padding: 15px;
+  margin: 15px;
 }
 
 h1 {
@@ -36,6 +37,7 @@ hr {
 .navbar-fixed-bottom {
   min-width: 300px;
   max-width: 750px;
+  margin: 15px;
 }
 
 .glyphicon-none:before {

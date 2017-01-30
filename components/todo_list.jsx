@@ -15,7 +15,7 @@ var TodoList = React.createClass( {
   },
   
   createList: function( todo, i ) {
-    return <div className="col-xs-12 half-buffer" key={ i }>
+    return <div className="half-buffer" key={ i }>
       <div className="input-group">
         <span className="input-group-btn">
           <button type="button"

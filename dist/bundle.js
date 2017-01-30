@@ -21631,7 +21631,7 @@
 	      { className: "row" },
 	      _react2.default.createElement(
 	        "div",
-	        { className: "col-xs-12" },
+	        null,
 	        _react2.default.createElement(
 	          "header",
 	          { className: "todo-header" },
@@ -21706,7 +21706,7 @@
 
 	    return _react2.default.createElement(
 	      "div",
-	      { className: "col-xs-12 half-buffer", key: i },
+	      { className: "half-buffer", key: i },
 	      _react2.default.createElement(
 	        "div",
 	        { className: "input-group" },
@@ -21781,7 +21781,7 @@
 	      { className: "row" },
 	      _react2.default.createElement(
 	        "div",
-	        { className: "col-xs-12 navbar-fixed-bottom bottom-buffer" },
+	        { className: "navbar-fixed-bottom bottom-buffer" },
 	        _react2.default.createElement("hr", null),
 	        _react2.default.createElement(
 	          "div",
@@ -21861,7 +21861,7 @@
 	      { className: "row bottom-buffer" },
 	      _react2.default.createElement(
 	        "div",
-	        { className: "col-xs-12" },
+	        null,
 	        _react2.default.createElement(
 	          "ul",
 	          { className: "nav nav-tabs" },

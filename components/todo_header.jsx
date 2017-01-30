@@ -3,7 +3,7 @@ import React from 'react';
 var TodoHeader = React.createClass( {
   render: function() {
     return <div className="row">
-        <div className="col-xs-12">
+        <div>
           <header className="todo-header">
             <h1>{ this.headerMessages() }</h1>
           </header>

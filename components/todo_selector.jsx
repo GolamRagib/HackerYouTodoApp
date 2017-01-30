@@ -9,7 +9,7 @@ var TodoSelector = React.createClass({
 
   render: function() {
     return <div className="row bottom-buffer">
-        <div className="col-xs-12">
+        <div>
           <ul className="nav nav-tabs">
             { this.state.selectors.map((selectors, i) => {
               if( i == this.props.selector)
