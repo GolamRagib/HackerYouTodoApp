@@ -3,6 +3,7 @@ body {
   font-family: 'Roboto', sans-serif;
   min-width: 300px;
   max-width: 750px;
+  padding: 15px;
 }
 
 h1 {
@@ -17,11 +18,12 @@ h1 {
 /*  margin: 22px 0;*/
 }
 
-.top-buffer {
-  margin-top: 5px;
-}
 .bottom-buffer {
   margin-bottom: 20px;
+}
+
+.bottom-buffer-list {
+  margin-bottom: 80px;
 }
 
 .half-buffer {
@@ -37,8 +39,8 @@ hr {
   max-width: 750px;
 }
 
-
 .glyphicon-none:before {
     content: "\e013";
-    color: transparent !important;
+    visibility: hidden;
+/*    color: transparent !important;*/
 }

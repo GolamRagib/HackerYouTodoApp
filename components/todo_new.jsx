@@ -15,13 +15,14 @@ var TodoNew = React.createClass({
           <input type="text"
                  className="form-control"
                  placeholder="Add Something New"
-                 value={this.state.newTodo}
-                 onChange={this.updateNewTodo} />
+                 value={ this.state.newTodo }
+                 onKeyPress={ this.onPressEnterKey }
+                 onChange={ this.updateNewTodo } />
           <span className="input-group-btn">
             <button type="button"
                     className="btn btn-primary"
-                    value={this.state.newTodo}
-                    onClick={this.onAddNewButtonClick} >
+                    value={ this.state.newTodo }
+                    onClick={ this.onAddNewButtonClick } >
               <span className="glyphicon glyphicon-plus"></span>
             </button>
           </span>
@@ -30,13 +31,19 @@ var TodoNew = React.createClass({
     </div>
   },
   
-  updateNewTodo: function(evt) {
-    this.setState({newTodo: evt.target.value});
+  updateNewTodo: function( evt ) {
+    this.setState( { newTodo: evt.target.value } );
   },
 
-  onAddNewButtonClick: function(evt) {
-    this.props.onAddNewButtonClick(this.state.newTodo);
-    this.setState({newTodo: ""});
+  onAddNewButtonClick: function( evt ) {
+    this.props.onAddNewButtonClick( this.state.newTodo );
+    this.setState( { newTodo: "" } );
+  },
+  
+  onPressEnterKey: function( evt ) {
+    if ( evt.key === "Enter" ) {
+      this.onAddNewButtonClick();
+    }
   },
 
 });

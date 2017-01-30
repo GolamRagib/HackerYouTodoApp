@@ -21690,10 +21690,14 @@
 
 	    return _react2.default.createElement(
 	      "div",
-	      { className: "row" },
-	      this.props.todos.map(function (todo, i) {
-	        if (todo.completed && [0, 1].includes(_this.props.selector)) return _this.createList(todo, i);else if (!todo.completed && [0, 2].includes(_this.props.selector)) return _this.createList(todo, i);
-	      })
+	      { className: "row bottom-buffer-list" },
+	      _react2.default.createElement(
+	        "div",
+	        { className: " bottom-buffer-list" },
+	        this.props.todos.map(function (todo, i) {
+	          if (todo.completed && [0, 1].includes(_this.props.selector)) return _this.createList(todo, i);else if (!todo.completed && [0, 2].includes(_this.props.selector)) return _this.createList(todo, i);
+	        })
+	      )
 	    );
 	  },
 
@@ -21705,41 +21709,37 @@
 	      { className: "col-xs-12 half-buffer", key: i },
 	      _react2.default.createElement(
 	        "div",
-	        { className: "" },
+	        { className: "input-group" },
 	        _react2.default.createElement(
-	          "div",
-	          { className: "input-group" },
+	          "span",
+	          { className: "input-group-btn" },
 	          _react2.default.createElement(
-	            "span",
-	            { className: "input-group-btn" },
-	            _react2.default.createElement(
-	              "button",
-	              { type: "button",
-	                className: "btn btn-primary",
-	                onClick: function onClick() {
-	                  return _this2.props.onComplete(i);
-	                } },
-	              _react2.default.createElement("span", { className: todo.completed ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-none" })
-	            )
-	          ),
-	          _react2.default.createElement("input", { type: "text",
-	            className: "form-control",
-	            onChange: function onChange(evt) {
-	              return _this2.props.onUpdateText(i, evt.target.value);
-	            },
-	            value: todo.text }),
+	            "button",
+	            { type: "button",
+	              className: "btn btn-primary",
+	              onClick: function onClick() {
+	                return _this2.props.onComplete(i);
+	              } },
+	            _react2.default.createElement("span", { className: todo.completed ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-none" })
+	          )
+	        ),
+	        _react2.default.createElement("input", { type: "text",
+	          className: "form-control",
+	          onChange: function onChange(evt) {
+	            return _this2.props.onUpdateText(i, evt.target.value);
+	          },
+	          value: todo.text }),
+	        _react2.default.createElement(
+	          "span",
+	          { className: "input-group-btn" },
 	          _react2.default.createElement(
-	            "span",
-	            { className: "input-group-btn" },
-	            _react2.default.createElement(
-	              "button",
-	              { type: "button",
-	                className: "btn btn-danger",
-	                onClick: function onClick() {
-	                  return _this2.props.onDelete(i);
-	                } },
-	              _react2.default.createElement("span", { className: "glyphicon glyphicon-trash" })
-	            )
+	            "button",
+	            { type: "button",
+	              className: "btn btn-danger",
+	              onClick: function onClick() {
+	                return _this2.props.onDelete(i);
+	              } },
+	            _react2.default.createElement("span", { className: "glyphicon glyphicon-trash" })
 	          )
 	        )
 	      )
@@ -21790,6 +21790,7 @@
 	            className: "form-control",
 	            placeholder: "Add Something New",
 	            value: this.state.newTodo,
+	            onKeyPress: this.onPressEnterKey,
 	            onChange: this.updateNewTodo }),
 	          _react2.default.createElement(
 	            "span",
@@ -21815,6 +21816,12 @@
 	  onAddNewButtonClick: function onAddNewButtonClick(evt) {
 	    this.props.onAddNewButtonClick(this.state.newTodo);
 	    this.setState({ newTodo: "" });
+	  },
+
+	  onPressEnterKey: function onPressEnterKey(evt) {
+	    if (evt.key === "Enter") {
+	      this.onAddNewButtonClick();
+	    }
 	  }
 
 	});
