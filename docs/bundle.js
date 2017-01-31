@@ -21712,7 +21712,7 @@
 	              onClick: function onClick() {
 	                return _this2.props.onComplete(i);
 	              } },
-	            _react2.default.createElement("span", { className: todo.completed ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-ok-none" })
+	            _react2.default.createElement("span", { className: todo.completed ? "fa fa-check" : "fa fa-check-none" })
 	          )
 	        ),
 	        _react2.default.createElement("input", { type: "text",
@@ -21731,7 +21731,7 @@
 	              onClick: function onClick() {
 	                return _this2.props.onDelete(i);
 	              } },
-	            _react2.default.createElement("span", { className: "glyphicon glyphicon-trash" })
+	            _react2.default.createElement("span", { className: "fa fa-trash-o" })
 	          )
 	        )
 	      )
@@ -21783,7 +21783,7 @@
 	            _react2.default.createElement(
 	              "button",
 	              { type: "button", className: "btn", disabled: "true" },
-	              _react2.default.createElement("span", { className: "glyphicon glyphicon-ok-none" })
+	              _react2.default.createElement("span", { className: "fa fa-check-none" })
 	            )
 	          ),
 	          _react2.default.createElement("input", { type: "text",
@@ -21801,7 +21801,7 @@
 	                className: "btn btn-primary",
 	                value: this.state.newTodo,
 	                onClick: this.onAddNewButtonClick },
-	              _react2.default.createElement("span", { className: "glyphicon glyphicon-plus" })
+	              _react2.default.createElement("span", { className: "fa fa-plus" })
 	            )
 	          )
 	        )

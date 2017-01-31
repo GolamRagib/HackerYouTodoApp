@@ -19,7 +19,7 @@ var TodoList = React.createClass( {
           <button type="button"
                   className={ todo.completed ? "btn btn-success" : "btn btn-warning" }
                   onClick={ () => this.props.onComplete( i ) } >
-            <span className={ todo.completed ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-ok-none" } >
+            <span className={ todo.completed ? "fa fa-check" : "fa fa-check-none" } >
             </span>
           </button>
         </span>
@@ -31,7 +31,7 @@ var TodoList = React.createClass( {
           <button type="button"
                   className="btn btn-danger"
                   onClick={ () => this.props.onDelete( i ) }>
-            <span className="glyphicon glyphicon-trash"></span>
+            <span className="fa fa-trash-o"></span>
           </button>
         </span>
       </div>

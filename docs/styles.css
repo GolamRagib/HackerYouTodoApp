@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Roboto|Patua+One';
+@import 'https://fonts.googleapis.com/css?family=Roboto|Patua+One|Material+Icons';
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -7,7 +7,7 @@ body {
 }
 
 .row-centered {
-    text-align:center;
+  text-align:center;
 }
 
 .col-centered {
@@ -18,15 +18,10 @@ body {
   max-width: 770px;
 }
 
-h2 {
-  font-family: 'Patua One', cursive;
-}
-
 .todo-header {
+  font-family: 'Patua One', cursive;
   margin-top:  10px;
   text-align:  center;
-  font-weight: bold;
-  font-size:   2em;
 }
 
 .bottom-buffer {
@@ -38,6 +33,12 @@ h2 {
   visibility: hidden;
 }
 
+.fa-check-none:before {
+  content: "\f00c";
+  visibility: hidden;
+}
+
 .nav > li > a {
   padding: 7px;
 }
+

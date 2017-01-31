@@ -13,7 +13,7 @@ var TodoNew = React.createClass({
         <div className="input-group">
           <span className="input-group-btn">
             <button type="button" className="btn" disabled="true">
-              <span className="glyphicon glyphicon-ok-none"></span>
+              <span className="fa fa-check-none"></span>
             </button>
           </span>
           <input   type="text"
@@ -27,7 +27,7 @@ var TodoNew = React.createClass({
                className="btn btn-primary"
                    value={ this.state.newTodo }
                  onClick={ this.onAddNewButtonClick } >
-              <span className="glyphicon glyphicon-plus"></span>
+              <span className="fa fa-plus"></span>
             </button>
           </span>
         </div>
