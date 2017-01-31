@@ -21535,7 +21535,7 @@
 
 	  getInitialState: function getInitialState() {
 	    return {
-	      todos: [{ text: "Mow the lawn", completed: false }, { text: "Do the dishes", completed: true }, { text: "Do more dishes", completed: false }],
+	      todos: [{ text: "Learn arrow functions", completed: false }, { text: "Learn Javascript arrays", completed: true }, { text: "Learn JSX", completed: false }, { text: "Learn Typescript", completed: false }],
 	      selector: 0
 	    };
 	  },
@@ -21630,16 +21630,12 @@
 	      "div",
 	      { className: "row" },
 	      _react2.default.createElement(
-	        "div",
-	        null,
+	        "header",
+	        { className: "todo-header" },
 	        _react2.default.createElement(
-	          "header",
-	          { className: "todo-header" },
-	          _react2.default.createElement(
-	            "h1",
-	            null,
-	            this.headerMessages()
-	          )
+	          "h2",
+	          null,
+	          this.headerMessages()
 	        )
 	      )
 	    );
@@ -21690,14 +21686,10 @@
 
 	    return _react2.default.createElement(
 	      "div",
-	      { className: "row bottom-buffer-list" },
-	      _react2.default.createElement(
-	        "div",
-	        { className: " bottom-buffer-list" },
-	        this.props.todos.map(function (todo, i) {
-	          if (todo.completed && [0, 1].includes(_this.props.selector)) return _this.createList(todo, i);else if (!todo.completed && [0, 2].includes(_this.props.selector)) return _this.createList(todo, i);
-	        })
-	      )
+	      { className: "row" },
+	      this.props.todos.map(function (todo, i) {
+	        if (todo.completed && [0, 1].includes(_this.props.selector)) return _this.createList(todo, i);else if (!todo.completed && [0, 2].includes(_this.props.selector)) return _this.createList(todo, i);
+	      })
 	    );
 	  },
 
@@ -21706,7 +21698,7 @@
 
 	    return _react2.default.createElement(
 	      "div",
-	      { className: "half-buffer", key: i },
+	      { className: "bottom-buffer", key: i },
 	      _react2.default.createElement(
 	        "div",
 	        { className: "input-group" },
@@ -21716,11 +21708,11 @@
 	          _react2.default.createElement(
 	            "button",
 	            { type: "button",
-	              className: "btn btn-primary",
+	              className: todo.completed ? "btn btn-success" : "btn btn-warning",
 	              onClick: function onClick() {
 	                return _this2.props.onComplete(i);
 	              } },
-	            _react2.default.createElement("span", { className: todo.completed ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-none" })
+	            _react2.default.createElement("span", { className: todo.completed ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-ok-none" })
 	          )
 	        ),
 	        _react2.default.createElement("input", { type: "text",
@@ -21781,11 +21773,19 @@
 	      { className: "row" },
 	      _react2.default.createElement(
 	        "div",
-	        { className: "navbar-fixed-bottom bottom-buffer" },
-	        _react2.default.createElement("hr", null),
+	        { className: "bottom-buffer" },
 	        _react2.default.createElement(
 	          "div",
 	          { className: "input-group" },
+	          _react2.default.createElement(
+	            "span",
+	            { className: "input-group-btn" },
+	            _react2.default.createElement(
+	              "button",
+	              { type: "button", className: "btn", disabled: "true" },
+	              _react2.default.createElement("span", { className: "glyphicon glyphicon-ok-none" })
+	            )
+	          ),
 	          _react2.default.createElement("input", { type: "text",
 	            className: "form-control",
 	            placeholder: "Add Something New",
@@ -21858,47 +21858,43 @@
 	      "div",
 	      { className: "row bottom-buffer" },
 	      _react2.default.createElement(
-	        "div",
-	        null,
-	        _react2.default.createElement(
-	          "ul",
-	          { className: "nav nav-tabs" },
-	          this.state.selectors.map(function (selectors, i) {
-	            if (i == _this.props.selector) return _react2.default.createElement(
-	              "li",
-	              { role: "presentation", className: "active", key: i },
+	        "ul",
+	        { className: "nav nav-tabs" },
+	        this.state.selectors.map(function (selectors, i) {
+	          if (i == _this.props.selector) return _react2.default.createElement(
+	            "li",
+	            { role: "presentation", className: "active", key: i },
+	            _react2.default.createElement(
+	              "a",
+	              { onClick: function onClick(evt) {
+	                  return _this.props.onUpdateSelector(i);
+	                } },
+	              selectors,
+	              "\xA0",
 	              _react2.default.createElement(
-	                "a",
-	                { onClick: function onClick(evt) {
-	                    return _this.props.onUpdateSelector(i);
-	                  } },
-	                selectors,
-	                "\xA0",
-	                _react2.default.createElement(
-	                  "span",
-	                  { className: "badge" },
-	                  _this.countItems(_this.props.todos, i)
-	                )
+	                "span",
+	                { className: "badge" },
+	                _this.countItems(_this.props.todos, i)
 	              )
-	            );else return _react2.default.createElement(
-	              "li",
-	              { role: "presentation", key: i },
+	            )
+	          );else return _react2.default.createElement(
+	            "li",
+	            { role: "presentation", key: i },
+	            _react2.default.createElement(
+	              "a",
+	              { onClick: function onClick(evt) {
+	                  return _this.props.onUpdateSelector(i);
+	                } },
+	              selectors,
+	              "\xA0",
 	              _react2.default.createElement(
-	                "a",
-	                { onClick: function onClick(evt) {
-	                    return _this.props.onUpdateSelector(i);
-	                  } },
-	                selectors,
-	                "\xA0",
-	                _react2.default.createElement(
-	                  "span",
-	                  { className: "badge" },
-	                  _this.countItems(_this.props.todos, i)
-	                )
+	                "span",
+	                { className: "badge" },
+	                _this.countItems(_this.props.todos, i)
 	              )
-	            );
-	          })
-	        )
+	            )
+	          );
+	        })
 	      )
 	    );
 	  },

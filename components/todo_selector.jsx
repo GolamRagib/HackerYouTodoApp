@@ -9,27 +9,25 @@ var TodoSelector = React.createClass({
 
   render: function() {
     return <div className="row bottom-buffer">
-        <div>
-          <ul className="nav nav-tabs">
-            { this.state.selectors.map((selectors, i) => {
-              if( i == this.props.selector)
-                return <li role="presentation" className="active" key={i}>
-                         <a onClick={ (evt) => this.props.onUpdateSelector(i) }>
-                           {selectors}&nbsp;
-                           <span className="badge">{ this.countItems(this.props.todos, i) }</span>
-                         </a>
-                       </li>
-              else
-                return <li role="presentation" key={i}>
-                         <a onClick={ (evt) => this.props.onUpdateSelector(i) }>
-                          {selectors}&nbsp;
-                          <span className="badge">{ this.countItems(this.props.todos, i) }</span>
-                         </a>
-                       </li>
-            })}
-          </ul>
-        </div>
-      </div>;
+      <ul className="nav nav-tabs">
+        { this.state.selectors.map((selectors, i) => {
+          if( i == this.props.selector)
+            return <li role="presentation" className="active" key={i}>
+              <a onClick={ (evt) => this.props.onUpdateSelector(i) }>
+                {selectors}&nbsp;
+                <span className="badge">{ this.countItems(this.props.todos, i) }</span>
+              </a>
+            </li>
+          else
+            return <li role="presentation" key={i}>
+              <a onClick={ (evt) => this.props.onUpdateSelector(i) }>
+                {selectors}&nbsp;
+                <span className="badge">{ this.countItems(this.props.todos, i) }</span>
+              </a>
+            </li>
+        })}
+      </ul>
+    </div>;
   },
   
   countItems: function(todoItems, i) {

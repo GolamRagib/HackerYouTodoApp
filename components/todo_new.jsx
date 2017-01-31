@@ -9,20 +9,24 @@ var TodoNew = React.createClass({
   
   render: function() {
     return <div className="row">
-      <div className="navbar-fixed-bottom bottom-buffer">
-        <hr />
+      <div className="bottom-buffer">
         <div className="input-group">
-          <input type="text"
-                 className="form-control"
-                 placeholder="Add Something New"
-                 value={ this.state.newTodo }
-                 onKeyPress={ this.onPressEnterKey }
-                 onChange={ this.updateNewTodo } />
+          <span className="input-group-btn">
+            <button type="button" className="btn" disabled="true">
+              <span className="glyphicon glyphicon-ok-none"></span>
+            </button>
+          </span>
+          <input   type="text"
+              className="form-control"
+            placeholder="Add Something New"
+                  value={ this.state.newTodo }
+             onKeyPress={ this.onPressEnterKey }
+               onChange={ this.updateNewTodo } />
           <span className="input-group-btn">
             <button type="button"
-                    className="btn btn-primary"
-                    value={ this.state.newTodo }
-                    onClick={ this.onAddNewButtonClick } >
+               className="btn btn-primary"
+                   value={ this.state.newTodo }
+                 onClick={ this.onAddNewButtonClick } >
               <span className="glyphicon glyphicon-plus"></span>
             </button>
           </span>

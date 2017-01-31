@@ -1,46 +1,43 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto|Patua+One';
 
-body, .navbar-fixed-bottom {
-  font-family: 'Roboto', sans-serif;
-  min-width: 330px;
-  max-width: 690px;
-  margin-right:  15px;
-  margin-left:  15px;
-}
-
 body {
-  padding-right:  15px;
+  font-family: 'Roboto', sans-serif;
+  padding-right: 15px;
   padding-left:  15px;
 }
 
-h1 {
+.row-centered {
+    text-align:center;
+}
+
+.col-centered {
+  display:inline-block;
+  float:none;
+  text-align:left;
+  min-width: 290px;
+  max-width: 770px;
+}
+
+h2 {
   font-family: 'Patua One', cursive;
-  margin-top: 10px;
 }
 
 .todo-header {
-  text-align: center;
+  margin-top:  10px;
+  text-align:  center;
   font-weight: bold;
-  font-size: 2em;
+  font-size:   2em;
 }
 
 .bottom-buffer {
-  margin-bottom: 20px;
-}
-
-.bottom-buffer-list {
-  margin-bottom: 50px;
-}
-
-.half-buffer {
   margin-bottom: 10px;
 }
 
-hr {
-  border-top: 1px solid #dddddd;
-}
-
-.glyphicon-none:before {
+.glyphicon-ok-none:before {
   content: "\e013";
   visibility: hidden;
+}
+
+.nav > li > a {
+  padding: 7px;
 }

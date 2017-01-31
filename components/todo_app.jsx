@@ -8,9 +8,10 @@ var TodoApp = React.createClass({
   getInitialState: function() {
     return {
       todos: [
-        { text: "Mow the lawn"  , completed: false },
-        { text: "Do the dishes" , completed: true  },
-        { text: "Do more dishes", completed: false }
+        { text: "Learn arrow functions"  , completed: false },
+        { text: "Learn Javascript arrays" , completed: true  },
+        { text: "Learn JSX", completed: false },
+        { text: "Learn Typescript", completed: false },
       ],
       selector: 0,
     }

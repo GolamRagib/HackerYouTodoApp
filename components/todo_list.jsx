@@ -2,26 +2,24 @@ import React from 'react';
 
 var TodoList = React.createClass( {
   render: function() {
-    return <div className="row bottom-buffer-list">
-      <div className=" bottom-buffer-list">
+    return <div className="row">
         { this.props.todos.map( ( todo, i ) => {
           if( ( todo.completed ) && [ 0, 1 ].includes( this.props.selector ) )
             return this.createList( todo, i );
           else if( !( todo.completed ) && [ 0, 2 ].includes( this.props.selector ) )
           return this.createList( todo, i )
         } ) }
-      </div>
     </div>;
   },
   
   createList: function( todo, i ) {
-    return <div className="half-buffer" key={ i }>
+    return <div className="bottom-buffer" key={ i }>
       <div className="input-group">
         <span className="input-group-btn">
           <button type="button"
-                  className="btn btn-primary"
+                  className={ todo.completed ? "btn btn-success" : "btn btn-warning" }
                   onClick={ () => this.props.onComplete( i ) } >
-            <span className={ todo.completed ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-none" } >
+            <span className={ todo.completed ? "glyphicon glyphicon-ok" : "glyphicon glyphicon-ok-none" } >
             </span>
           </button>
         </span>
